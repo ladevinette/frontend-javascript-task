@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roll down year and month menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="years-menu">
+          <div class="menu">
+            <div class="left-menu">
+              <img src="assets/images/calendar.svg" />
+              <span class="menu-text">Wybierz rok</span>
+            </div>
+
+            <button class="edit-button" id="year-arrow-btn">
+              <img
+                src="assets/images/chevron-forward-outline.svg"
+                class="arrow"
+              />
+            </button>
+          </div>
+          <div class="roll-down-menu">
+            <button id="prevBtn" class="edit-button">
+              <img src="assets/images/chevron-back-outline.svg" class="arrow" />
+            </button>
+            <ul class="roll-down-menu-grid" id="yearList">
+              <!-- Initially, this list is empty -->
+            </ul>
+            <button id="nextBtn" class="edit-button">
+              <img
+                src="assets/images/chevron-forward-outline.svg"
+                class="arrow"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="months-menu">
+          <div class="menu">
+            <div class="left-menu">
+              <img src="assets/images/calendar.svg" />
+              <span class="menu-month-text">Wybierz miesiąc</span>
+            </div>
+
+            <button class="edit-button" id="month-arrow-btn">
+              <img
+                src="assets/images/chevron-forward-outline.svg"
+                class="arrow"
+              />
+            </button>
+          </div>
+          <div class="roll-down-months-menu">
+            <ul class="roll-down-menu-month-grid">
+              <li class="monthElement">1</li>
+              <li class="monthElement">2</li>
+              <li class="monthElement">3</li>
+              <li class="monthElement">4</li>
+              <li class="monthElement">5</li>
+              <li class="monthElement">6</li>
+              <li class="monthElement">7</li>
+              <li class="monthElement">8</li>
+              <li class="monthElement">9</li>
+              <li class="monthElement">10</li>
+              <li class="monthElement">11</li>
+              <li class="monthElement">12</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="filter-menu">
+          <span class="filter-text">Filtruj:</span>
+          <div class="filter-div">
+            <div class="filter-options">
+              <div class="span-div" id="filter-options-wrapper-closed-text">
+                <span class="span-text">wszystkie publikacje</span>
+              </div>
+
+              <div class="filter-options-wrapper">
+                <div class="filter-column">
+                  <span class="filter-name">Nazwa filtra</span>
+                  <div class="filter-container">
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox2"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox2"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox3"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox3"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox4"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox4"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox5"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox5"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox6"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox6"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox7"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox7"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox8"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox8"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox9"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox9"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox10"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox10"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-column">
+                  <span class="filter-name">Nazwa filtra</span>
+                  <div class="filter-container">
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox11"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox11"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox12"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox12"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox13"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox13"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox14"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox14"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox15"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox15"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox16"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox16"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox17"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox17"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox18"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox18"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox19"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox19"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox20"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox20"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-column">
+                  <span class="filter-name">Nazwa filtra</span>
+                  <div class="filter-container">
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox21"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox21"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox22"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox22"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox23"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox23"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox24"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox24"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox25"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox25"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox26"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox26"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox27"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox27"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox28"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox28"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox29"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox29"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                    <div class="custom-checkbox-wrapper">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          id="myCheckbox30"
+                          class="hidden-checkbox"
+                        />
+                        <label class="checkbox-label" for="myCheckbox30"
+                          >Select</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="arrow-column">
+                <button class="edit-button" id="arrow-filter-menu">
+                  <img
+                    src="assets/images/chevron-forward-outline.svg"
+                    class="arrow"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
